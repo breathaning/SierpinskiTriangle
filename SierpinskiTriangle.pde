@@ -1,5 +1,5 @@
-float rotation = 0;
-float size = 500;
+float triangleRotation = 0;
+float triangleSize = 500;
 int depth = 3;
 
 public void setup()
@@ -11,15 +11,15 @@ public void draw()
   background(color(0, 0, 0));
   noStroke();
   translate(width / 2, height / 2);
-  rotate(rotation);
-  sierpinski(0, -(int)size / 2, (int)size, depth);
+  rotate(triangleRotation);
+  sierpinski(0, -(int)triangleSize / 2, (int)triangleSize, depth);
 }
 public void mouseDragged()//optional
 {
   double centerMouseX = mouseX - width / 2;
   double centerMouseY = mouseY - height / 2;
-  rotation = (float)-Math.atan2(centerMouseX, centerMouseY);
-  size = (float)Math.max(200, Math.sqrt(centerMouseX * centerMouseX + centerMouseY * centerMouseY));
+  triangleRotation = (float)-Math.atan2(centerMouseX, centerMouseY);
+  triangleSize = (float)Math.max(200, Math.sqrt(centerMouseX * centerMouseX + centerMouseY * centerMouseY));
 }
 public void mouseClicked() {
   if (mouseButton == LEFT) {
