@@ -19,7 +19,7 @@ public void mouseDragged()//optional
   double centerMouseX = mouseX - width / 2;
   double centerMouseY = mouseY - height / 2;
   triangleRotation = -(float)Math.atan2(centerMouseX, centerMouseY);
-  triangleSize = (float)Math.max(200, Math.sqrt(centerMouseX * centerMouseX + centerMouseY * centerMouseY));
+  triangleSize = (float)Math.max(200, 2 * Math.sqrt(centerMouseX * centerMouseX + centerMouseY * centerMouseY));
 }
 public void mouseClicked() {
   if (mouseButton == LEFT) {
