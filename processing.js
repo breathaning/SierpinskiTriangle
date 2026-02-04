@@ -7541,7 +7541,7 @@ module.exports = function withTouch(p, curElement, attachEventHandler, document,
   /**
    * Mouse moved or dragged
    */
-  attachEventHandler(curElement, "mousemove", function(e) {
+  attachEventHandler(document, "mousemove", function(e) {
     updateMousePosition(curElement, e);
     if (typeof p.mouseMoved === "function" && !p.__mousePressed) {
       p.mouseMoved();
@@ -7583,7 +7583,7 @@ module.exports = function withTouch(p, curElement, attachEventHandler, document,
   /**
    * Mouse pressed or drag
    */
-  attachEventHandler(curElement, "mousedown", function(e) {
+  attachEventHandler(document, "mousedown", function(e) {
     p.__mousePressed = true;
     p.mouseDragging = false;
     switch (e.which) {
@@ -7606,7 +7606,7 @@ module.exports = function withTouch(p, curElement, attachEventHandler, document,
   /**
    * Mouse clicked or released
    */
-  attachEventHandler(curElement, "mouseup", function(e) {
+  attachEventHandler(document, "mouseup", function(e) {
     p.__mousePressed = false;
 
     if (typeof p.mouseClicked === "function" && !p.mouseDragging) {
